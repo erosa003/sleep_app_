@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Página no encontrada — Luna</title>
+    <meta name="theme-color" content="#1B2140" />
+    <link rel="icon" href="/icon-192.png" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+      :root {
+        --bg-deep: #1B2140; --bg-deep2: #2B2F5C; --bg-deep3: #363A6B;
+        --surface: #FBF8F1; --ink: #241F3D; --ink-soft: #6E6785;
+        --gold: #E3A94D; --gold-deep: #C6862B; --star: #F5EFD9;
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        height: 100%; margin: 0;
+        background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-deep2) 45%, var(--bg-deep3) 100%);
+        font-family: 'Inter', sans-serif;
+        color: var(--star);
+      }
+      body {
+        display: flex; align-items: center; justify-content: center;
+        min-height: 100vh; padding: 24px; position: relative; overflow: hidden;
+      }
+      .stars span {
+        position: absolute; width: 3px; height: 3px; background: var(--star);
+        border-radius: 50%; opacity: 0.55;
+      }
+      .card {
+        position: relative; z-index: 1;
+        background: var(--surface); color: var(--ink);
+        max-width: 420px; width: 100%;
+        border-radius: 24px; padding: 40px 32px 32px;
+        text-align: center;
+        box-shadow: 0 20px 50px rgba(10, 8, 30, 0.4);
+      }
+      .moon {
+        width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 20px;
+        background: radial-gradient(circle at 32% 32%, var(--gold), var(--gold-deep));
+        position: relative; overflow: hidden;
+      }
+      .moon::after {
+        content: ''; position: absolute; width: 60px; height: 60px; border-radius: 50%;
+        background: var(--bg-deep2); top: -8px; left: 26px;
+      }
+      h1 {
+        font-family: 'Fraunces', serif; font-weight: 600; font-size: 44px; margin: 0 0 6px;
+        color: var(--gold-deep);
+      }
+      h2 {
+        font-family: 'Fraunces', serif; font-weight: 600; font-size: 20px; margin: 0 0 10px;
+      }
+      p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; margin: 0 0 26px; }
+      a.btn {
+        display: inline-block; text-decoration: none;
+        background: var(--gold-deep); color: white; font-weight: 700; font-size: 14.5px;
+        padding: 13px 28px; border-radius: 14px;
+      }
+      .brand {
+        position: relative; z-index: 1;
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+        margin-bottom: 22px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 15px;
+        color: var(--star); position: absolute; top: 26px; left: 0; right: 0;
+      }
+      .brand-icon {
+        width: 26px; height: 26px; border-radius: 50%;
+        background: radial-gradient(circle at 32% 32%, var(--gold), var(--gold-deep));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stars" id="stars"></div>
+    <div class="brand"><span class="brand-icon"></span> Luna</div>
+    <div class="card">
+      <div class="moon"></div>
+      <h1>404</h1>
+      <h2>Por acá no hay nada... como a las 3 de la mañana.</h2>
+      <p>La página que buscás no existe o cambió de lugar. Volvé al inicio y seguimos con el seguimiento de sueño.</p>
+      <a class="btn" href="/">Volver al inicio</a>
+    </div>
+    <script>
+      var field = document.getElementById('stars');
+      for (var i = 0; i < 24; i++) {
+        var s = document.createElement('span');
+        s.style.top = (Math.random() * 100) + '%';
+        s.style.left = (Math.random() * 100) + '%';
+        field.appendChild(s);
+      }
+    </script>
+  </body>
+</html>
